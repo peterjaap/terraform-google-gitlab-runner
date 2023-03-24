@@ -18,3 +18,5 @@ gcp_zone    = "europe-west4-a"
 
 ci_concurrency      = 5
 ci_worker_idle_time = 3600
+gcp_project = "elgentos-cicd"
+gitlab_url = "https://gitlab.elgentos.nl"

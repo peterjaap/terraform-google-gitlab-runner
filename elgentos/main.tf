@@ -31,7 +31,7 @@ terraform {
 
 # Install the GitLab CI Runner infrastructure
 module "ci" {
-  source  = "../../"
+  source  = "../"
 
   gcp_project         = var.gcp_project
   gcp_zone            = var.gcp_zone
