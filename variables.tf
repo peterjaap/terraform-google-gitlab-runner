@@ -80,7 +80,7 @@ variable "ci_concurrency" {
 }
 variable "ci_worker_disk_size" {
   type        = string
-  default     = "10"
+  default     = "40"
   description = "The size of the persistent disk in GB."
 }
 variable "ci_worker_idle_time" {
