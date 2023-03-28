@@ -73,6 +73,16 @@ EOF
 }
 
 # Worker options
+variable "gcp_machine_type" {
+  type        = string
+  default     = "f1-micro"
+  description = "The machine type to use. f1-micro or g1-small for example."
+}
+variable "gcp_docker_image" {
+  type        = string
+  default     = "alpine:latest"
+  description = "The default Docker image to use"
+}
 variable "ci_concurrency" {
   type        = number
   default     = 1
