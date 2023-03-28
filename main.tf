@@ -99,7 +99,7 @@ sudo install /tmp/docker-machine /usr/local/bin/docker-machine
 echo "Verifying docker-machine and generating SSH keys ahead of time."
 docker-machine create --driver google \
     --google-project ${var.gcp_project} \
-    --google-machine-type f1-micro \
+    --google-machine-type ${var.gcp_machine_type} \
     --google-zone ${var.gcp_zone} \
     --google-service-account ${google_service_account.ci_worker.email} \
     --google-scopes https://www.googleapis.com/auth/cloud-platform \
@@ -121,7 +121,7 @@ sudo gitlab-runner register -n \
     --url ${var.gitlab_url} \
     --registration-token ${var.ci_token} \
     --executor "docker+machine" \
-    --docker-image "alpine:latest" \
+    --docker-image "${var.gcp_docker_image}" \
     --tag-list "${var.ci_runner_gitlab_tags}" \
     --run-untagged="${var.ci_runner_gitlab_untagged}" \
     --docker-privileged=${var.docker_privileged} \

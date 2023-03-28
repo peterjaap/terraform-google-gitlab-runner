@@ -15,8 +15,10 @@
  */
 
 gcp_zone    = "europe-west4-a"
+gcp_machine_type = "g1-small"
+gcp_docker_image = "eu.gcr.io/elgentos-cicd/deployment-runner:8.1"
 
-ci_concurrency      = 5
-ci_worker_idle_time = 3600
+ci_concurrency      = 30
+ci_worker_idle_time = 900
 gcp_project = "elgentos-cicd"
 gitlab_url = "https://gitlab.elgentos.nl"
