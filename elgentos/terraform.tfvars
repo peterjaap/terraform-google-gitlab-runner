@@ -15,7 +15,6 @@
  */
 
 gcp_zone    = "europe-west4-a"
-gcp_machine_type = "g1-small"
 gcp_docker_image = "eu.gcr.io/elgentos-cicd/deployment-runner:8.1"
 
 ci_concurrency      = 30

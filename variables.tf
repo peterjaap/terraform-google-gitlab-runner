@@ -27,6 +27,11 @@ variable "gcp_zone" {
   type        = string
   description = "The GCP zone to deploy the runner into."
 }
+variable "gcp_docker_image" {
+  type        = string
+  default     = "alpine:latest"
+  description = "The default Docker image to use"
+}
 variable "gitlab_url" {
   type        = string
   description = "The URL of the GitLab server hosting the projects to be built."
@@ -65,7 +70,7 @@ variable "ci_runner_gitlab_untagged" {
 }
 variable "ci_runner_instance_type" {
   type        = string
-  default     = "f1-micro"
+  default     = "g1-small"
   description = <<EOF
 The instance type used for the runner. This shouldn't need to be changed because the builds
 themselves run on separate worker instances.
@@ -73,16 +78,6 @@ EOF
 }
 
 # Worker options
-variable "gcp_machine_type" {
-  type        = string
-  default     = "f1-micro"
-  description = "The machine type to use. f1-micro or g1-small for example."
-}
-variable "gcp_docker_image" {
-  type        = string
-  default     = "alpine:latest"
-  description = "The default Docker image to use"
-}
 variable "ci_concurrency" {
   type        = number
   default     = 1

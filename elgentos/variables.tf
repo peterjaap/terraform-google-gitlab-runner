@@ -22,6 +22,10 @@ variable "gcp_zone" {
     type        = string
     description = "The GCP zone to deploy the runner into."
 }
+variable "gcp_docker_image" {
+  type        = string
+  description = "The default Docker image to use"
+}
 variable "gitlab_url" {
     type        = string
     description = "The URL of the GitLab server to register the runner against."

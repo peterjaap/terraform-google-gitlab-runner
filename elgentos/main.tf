@@ -35,6 +35,7 @@ module "ci" {
 
   gcp_project         = var.gcp_project
   gcp_zone            = var.gcp_zone
+  gcp_docker_image    = var.gcp_docker_image
   gitlab_url          = var.gitlab_url
   ci_token            = var.ci_token
   ci_concurrency      = var.ci_concurrency

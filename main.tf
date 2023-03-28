@@ -99,7 +99,7 @@ sudo install /tmp/docker-machine /usr/local/bin/docker-machine
 echo "Verifying docker-machine and generating SSH keys ahead of time."
 docker-machine create --driver google \
     --google-project ${var.gcp_project} \
-    --google-machine-type ${var.gcp_machine_type} \
+    --google-machine-type ${var.ci_runner_instance_type} \
     --google-zone ${var.gcp_zone} \
     --google-service-account ${google_service_account.ci_worker.email} \
     --google-scopes https://www.googleapis.com/auth/cloud-platform \
